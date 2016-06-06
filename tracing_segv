@@ -1,0 +1,12 @@
+[f77aa440] write(1, "FEED ME!", 8)      = 8
+[f77aa440] write(1, "\n", 1)            = 1
+[f77aa440] read(0, "!", 1)              = 1
+[f77aa440] read(0, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"..., 33) = 33
+[f77aa440] write(1, "ATE 4141414141414141414141414141"..., 40) = 40
+[f77aa440] open("/dev/tty", O_RDWR|O_NOCTTY|O_NONBLOCK) = 2
+[f77aa440] writev(2, [{"*** ", 4}, {"stack smashing detected", 23}, {" ***: ", 6}, {"./feedme", 8}, {" terminated\n", 12}], 5) = 53
+[f77aa440] mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xfffffffff77a9000
+[f77aa440] rt_sigprocmask(SIG_UNBLOCK, [ABRT], NULL, 8) = 0
+[f77aa440] tgkill(894, 894, SIGABRT)    = 0
+[f77aa440] --- SIGABRT {si_signo=SIGABRT, si_code=SI_TKILL, si_pid=894, si_uid=1000} ---
+[????????????????] +++ killed by SIGABRT (core dumped) +++
